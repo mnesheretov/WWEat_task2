@@ -1,0 +1,39 @@
+﻿@model IEnumerable<dynamic>
+
+@{
+    ViewData["Title"] = "Feed";
+}
+
+<h1>Feed</h1>
+
+@if (!Model.Any())
+{
+    <p>Никаких записей пока нет.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>User Name</th>
+                <th>User Email</th>
+                <th>Dish Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Time</td>
+                    <td>@item.UserName</td>
+                    <td>@item.UserEmail</td>
+                    <td>@item.DishName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
